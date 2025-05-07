@@ -7,15 +7,17 @@
 ![release](https://img.shields.io/github/v/release/remarkablegames/bubble-gun)
 [![build](https://github.com/remarkablegames/bubble-gun/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/bubble-gun/actions/workflows/build.yml)
 
-Bubble Gun is a top-down survival game where you shoot bubbles at enemies.
+💦 🔫  <kbd>Bubble Gun</kbd> is a top-down survival game where you shoot bubbles at enemies.
 
-This game was made for [Global Game Jam 2025](https://globalgamejam.org/games/2025/kiki-and-boba-4), which the theme was `Bubble`. The game was bootstrapped from [`kaplay-template`](https://github.com/remarkablegames/kaplay-template). Read the [blog post](https://remarkablegames.org/posts/bubble-gun/).
+This game was made for [Global Game Jam 2025](https://globalgamejam.org/games/2025/kiki-and-boba-4), which the theme was **Bubble**.
 
 Play the game on:
 
 - [remarkablegames](https://remarkablegames.org/bubble-gun)
 - [itch.io](https://remarkablegames.itch.io/bubble-gun)
 - [newgrounds](https://www.newgrounds.com/portal/view/966187)
+
+Read the [blog post](https://remarkablegames.org/posts/bubble-gun/).
 
 ## How to Play
 
@@ -28,8 +30,8 @@ Play the game on:
 
 ## Credits
 
-- KitB@sh - Artist, Composer ([SoundCloud](https://soundcloud.com/k1tb4sh), [YouTube](https://www.youtube.com/@kitbash52))
-- remarkablemark - Programmer ([GitHub](https://github.com/remarkablemark))
+- [KitB@sh](https://soundcloud.com/k1tb4sh) - Artist, Composer ([YouTube](https://www.youtube.com/@kitbash52))
+- [remarkablemark](https://github.com/remarkablemark) - Programmer
 
 ## Install
 
