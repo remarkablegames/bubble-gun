@@ -38,6 +38,7 @@ export function addEnemy() {
     hurtPlayer(enemy.damage)
   })
 
+  // @ts-expect-error Type 'void' is not assignable to type 'KEventController'.
   enemy.onCollideUpdate(Tag.Player, () => {
     if (enemy.bubble) {
       return
