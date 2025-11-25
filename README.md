@@ -4,7 +4,7 @@
 
 # Bubble Gun
 
-![release](https://img.shields.io/github/v/release/remarkablegames/bubble-gun)
+[![release](https://img.shields.io/github/v/release/remarkablegames/bubble-gun)](https://github.com/remarkablegames/bubble-gun/releases)
 [![build](https://github.com/remarkablegames/bubble-gun/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/bubble-gun/actions/workflows/build.yml)
 
 💦 🔫  <kbd>Bubble Gun</kbd> is a top-down survival game where you shoot bubbles at enemies.
@@ -13,9 +13,9 @@ This game was made for [Global Game Jam 2025](https://globalgamejam.org/games/20
 
 Play the game on:
 
-- [remarkablegames](https://remarkablegames.org/bubble-gun)
 - [itch.io](https://remarkablegames.itch.io/bubble-gun)
 - [newgrounds](https://www.newgrounds.com/portal/view/966187)
+- [remarkablegames](https://remarkablegames.org/bubble-gun)
 
 Read the [blog post](https://remarkablegames.org/posts/bubble-gun/).
 
