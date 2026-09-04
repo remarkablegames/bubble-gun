@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/remarkablegames/bubble-gun/blob/master/public/logo.png" alt="Bubble Gun">
+  <img src="public/cover.png" width="300" alt="Bubble Gun">
 </p>
 
 # Bubble Gun
@@ -14,7 +14,7 @@ This game was made for [Global Game Jam 2025](https://globalgamejam.org/games/20
 Play the game on:
 
 - [itch.io](https://remarkablegames.itch.io/bubble-gun)
-- [newgrounds](https://www.newgrounds.com/portal/view/966187)
+- [Newgrounds](https://www.newgrounds.com/portal/view/966187)
 - [remarkablegames](https://remarkablegames.org/bubble-gun)
 
 Read the [blog post](https://remarkablegames.org/posts/bubble-gun/).
@@ -82,7 +82,7 @@ Your game is ready to be deployed!
 
 Builds the game and packages it into a Zip file in the `dist` folder.
 
-Your game can be uploaded to your server, [Itch.io](https://itch.io/), [Newgrounds](https://www.newgrounds.com/), etc.
+Your game can be uploaded to your server, [itch.io](https://itch.io/), [Newgrounds](https://www.newgrounds.com/), etc.
 
 ## License
 
