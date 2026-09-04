@@ -13,6 +13,7 @@ This game was made for [Global Game Jam 2025](https://globalgamejam.org/games/20
 
 Play the game on:
 
+- [Wavedash](https://wavedash.com/games/bubble-gun)
 - [itch.io](https://remarkablegames.itch.io/bubble-gun)
 - [Newgrounds](https://www.newgrounds.com/portal/view/966187)
 - [remarkablegames](https://remarkablegames.org/bubble-gun)
