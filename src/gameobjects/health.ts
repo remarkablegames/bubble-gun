@@ -31,8 +31,8 @@ export function addHealth() {
     health.width = (player.hp() / maxHP) * WIDTH
   }
 
-  player.onHurt(updateHealth)
-  player.onHeal(updateHealth)
+  player?.onHurt(updateHealth)
+  player?.onHeal(updateHealth)
 
   return health
 }
