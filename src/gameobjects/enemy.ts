@@ -22,7 +22,7 @@ export function addEnemy() {
     { bubble: 0, damage, speed },
   ])
 
-  if (enemy.sprite === Sprite.Gooba) {
+  if ((enemy.sprite as Sprite) === Sprite.Gooba) {
     play(Sound.Splash)
   }
 

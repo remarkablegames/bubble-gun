@@ -8,8 +8,16 @@ const SPEED = 500
 const DAMAGE = 5
 
 export function addProjectile(enemy: Enemy) {
+  const player = getPlayer()
+  const enemyPos = enemy.screenPos()
+  const playerPos = player?.screenPos()
+
+  if (!enemyPos || !playerPos) {
+    return
+  }
+
   play(Sound.Sneeze, { detune: rand(-100, 100) })
-  const direction = getDirection(enemy.screenPos()!, getPlayer()!.screenPos()!)
+  const direction = getDirection(enemyPos, playerPos)
 
   const projectile = game.add([
     sprite(Sprite.Projectile),

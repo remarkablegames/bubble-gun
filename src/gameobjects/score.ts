@@ -40,7 +40,9 @@ export function incrementScore(value = 1) {
   const newScore = parseInt(score.text, 10) + value
   score.text = newScore.toString()
 
-  score.parent!.width = CHARACTER_WIDTH * score.text.length
+  if (score.parent) {
+    score.parent.width = CHARACTER_WIDTH * score.text.length
+  }
 
   if (newScore === gameState.reward.score) {
     gameState.reward.increment += 1

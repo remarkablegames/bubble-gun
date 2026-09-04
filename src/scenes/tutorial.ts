@@ -17,7 +17,13 @@ import { gameState, resetGameState } from '../helpers'
 
 const INSTRUCTION_MARGIN = 100
 
-const instructions = [
+interface Instruction {
+  start: number
+  text: string
+  action?: () => void
+}
+
+const instructions: Instruction[] = [
   {
     start: 0,
     text: 'Press P or ESC to pause',
@@ -29,13 +35,11 @@ const instructions = [
   {
     start: 2,
     text: 'WASD or arrow keys to move',
-    action() {},
   },
 
   {
     start: 4,
     text: 'Left click to shoot',
-    action() {},
   },
 
   {
@@ -126,7 +130,7 @@ scene(Scene.Tutorial, () => {
       if (instruction.start) {
         play(Sound.Shoot, { detune: index * 100 })
       }
-      instruction.action()
+      instruction.action?.()
 
       addText({
         ...getWidthAndHeight(instruction.text),

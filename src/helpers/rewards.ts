@@ -1,7 +1,14 @@
 import { getPlayer } from '../gameobjects'
 import { gameState } from '../helpers'
 
-const rewards = [
+interface Reward {
+  percentage: number
+  setPercentage(percentage?: number): void
+  readonly text: string
+  action(): void
+}
+
+const rewards: Reward[] = [
   // heal hp
   {
     percentage: 0,
@@ -9,12 +16,20 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Heal ${this.percentage}% HP`
+      return `Heal ${this.percentage.toString()}% HP`
     },
     action() {
-      const player = getPlayer()!
-      const hp = player.maxHP()! * (this.percentage / 100)
-      player.heal(hp)
+      const player = getPlayer()
+
+      if (!player) {
+        return
+      }
+
+      const maxHP = player.maxHP()
+
+      if (maxHP) {
+        player.heal(maxHP * (this.percentage / 100))
+      }
     },
   },
 
@@ -25,14 +40,22 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Max HP +${this.percentage}%`
+      return `Max HP +${this.percentage.toString()}%`
     },
     action() {
-      const player = getPlayer()!
-      const maxHP = player.maxHP()!
-      const hp = maxHP * (this.percentage / 100)
-      player.setMaxHP(maxHP + hp)
-      player.heal(hp)
+      const player = getPlayer()
+
+      if (!player) {
+        return
+      }
+
+      const maxHP = player.maxHP()
+
+      if (maxHP) {
+        const hp = maxHP * (this.percentage / 100)
+        player.setMaxHP(maxHP + hp)
+        player.heal(hp)
+      }
     },
   },
 
@@ -43,10 +66,15 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Player Speed +${this.percentage}%`
+      return `Player Speed +${this.percentage.toString()}%`
     },
     action() {
-      const player = getPlayer()!
+      const player = getPlayer()
+
+      if (!player) {
+        return
+      }
+
       player.speed *= (this.percentage + 100) / 100
     },
   },
@@ -58,10 +86,15 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Fire Rate +${this.percentage}%`
+      return `Fire Rate +${this.percentage.toString()}%`
     },
     action() {
-      const player = getPlayer()!
+      const player = getPlayer()
+
+      if (!player) {
+        return
+      }
+
       player.attack.delay *= (100 - this.percentage) / 100
     },
   },
@@ -73,7 +106,7 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Bubble Damage +${this.percentage}%`
+      return `Bubble Damage +${this.percentage.toString()}%`
     },
     action() {
       gameState.player.bubble.damage *= (100 + this.percentage) / 100
@@ -87,7 +120,7 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Bubble Size +${this.percentage}%`
+      return `Bubble Size +${this.percentage.toString()}%`
     },
     action() {
       gameState.player.bubble.size *= (100 + this.percentage) / 100
@@ -101,7 +134,7 @@ const rewards = [
       this.percentage = percentage
     },
     get text() {
-      return `Bubble Stun +${this.percentage}%`
+      return `Bubble Stun +${this.percentage.toString()}%`
     },
     action() {
       gameState.player.bubble.stun *= (100 + this.percentage) / 100

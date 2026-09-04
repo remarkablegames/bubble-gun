@@ -4,7 +4,7 @@ import { Scene } from '../constants'
 import { addButton, addModal, game, music } from '.'
 
 export function addPause() {
-  let currentTween: TweenController
+  let currentTween: TweenController | undefined
   const { x, y } = center()
 
   onKeyPress((key) => {
@@ -44,7 +44,7 @@ export function addPause() {
     text: 'Exit',
     onClick() {
       go(Scene.Title)
-      music?.stop()
+      music.stop()
     },
     parent: pauseMenu,
   })
@@ -52,7 +52,7 @@ export function addPause() {
   function togglePause() {
     game.paused = !game.paused
 
-    if (currentTween) {
+    if (currentTween !== undefined) {
       currentTween.cancel()
     }
 

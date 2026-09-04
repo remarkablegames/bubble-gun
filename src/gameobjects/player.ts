@@ -31,8 +31,15 @@ export function addPlayer(x = center().x, y = center().y) {
   addAttack(player)
 
   player.onUpdate(() => {
-    setCamPos(player.worldPos()!)
-    player.flipX = !(mousePos().x > player.screenPos()!.x)
+    const worldPos = player.worldPos()
+    const screenPos = player.screenPos()
+
+    if (!worldPos || !screenPos) {
+      return
+    }
+
+    setCamPos(worldPos)
+    player.flipX = !(mousePos().x > screenPos.x)
   })
 
   player.onCollide(Tag.Enemy, onHit(player))
@@ -82,8 +89,9 @@ function onHit(player: Player) {
     }
 
     const avatar = getAvatar()
+    const maxHP = player.maxHP()
 
-    if (player.hp() < player.maxHP()! / 4) {
+    if (maxHP && player.hp() < maxHP / 4) {
       player.play(Expression.Hurt)
       avatar.play(Expression.Hurt)
     } else {

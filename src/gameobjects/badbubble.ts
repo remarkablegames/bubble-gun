@@ -7,12 +7,20 @@ import { game } from '.'
 const SPEED = 200
 
 export function addBadBubble(enemy: Enemy) {
+  const player = getPlayer()
+  const enemyPos = enemy.screenPos()
+  const playerPos = player?.screenPos()
+
+  if (!playerPos || !enemyPos) {
+    return
+  }
+
   play(Sound.Shoot, { detune: rand(-100, 100) })
 
   const badBubble = game.add([
     sprite(Sprite.BadBubble),
     pos(enemy.pos),
-    move(getDirection(enemy.screenPos()!, getPlayer()!.screenPos()!), SPEED),
+    move(getDirection(enemyPos, playerPos), SPEED),
     area({ scale: 0.7 }),
     offscreen({ destroy: true }),
     anchor('center'),

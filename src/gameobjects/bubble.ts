@@ -9,13 +9,16 @@ const SCALE_MIN = 0.1
 const SCALE_MAX = 0.2
 
 export function addBubble(player: Player) {
+  const playerPos = player.screenPos()
+
+  if (!playerPos) {
+    return
+  }
+
   const bubble = game.add([
     sprite(Sprite.Bubble),
     pos(player.pos),
-    move(
-      getDirection(player.screenPos()!, mousePos()),
-      gameState.player.bubble.speed,
-    ),
+    move(getDirection(playerPos, mousePos()), gameState.player.bubble.speed),
     area({ scale: 0.7 }),
     offscreen({ destroy: true }),
     anchor('center'),

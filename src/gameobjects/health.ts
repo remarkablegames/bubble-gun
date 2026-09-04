@@ -19,10 +19,16 @@ export function addHealth() {
     color(255, 0, 0),
   ])
 
-  const player = getPlayer()!
+  const player = getPlayer()
 
   function updateHealth() {
-    health.width = (player.hp() / player.maxHP()!) * WIDTH
+    const maxHP = player?.maxHP()
+
+    if (!player || !maxHP) {
+      return
+    }
+
+    health.width = (player.hp() / maxHP) * WIDTH
   }
 
   player.onHurt(updateHealth)

@@ -7,7 +7,9 @@ export function addEnemyState(enemy: Enemy) {
   enemy.onStateEnter(State.Idle, () => {
     enemy.play(Animation.Idle)
     const seconds = rand(0.3, 1)
-    wait(seconds, () => enemy.enterState(State.Move))
+    wait(seconds, () => {
+      enemy.enterState(State.Move)
+    })
   })
 
   enemy.onStateEnter(State.Move, () => {
@@ -23,7 +25,7 @@ export function addEnemyState(enemy: Enemy) {
 
     enemy.play(Animation.Attack)
 
-    switch (enemy.sprite) {
+    switch (enemy.sprite as Sprite) {
       case Sprite.Bubbie:
         addBadBubble(enemy)
         break
@@ -33,19 +35,25 @@ export function addEnemyState(enemy: Enemy) {
         break
     }
 
-    wait(0.2, () => enemy.enterState(State.Cooldown))
+    wait(0.2, () => {
+      enemy.enterState(State.Cooldown)
+    })
   })
 
   enemy.onStateEnter(State.Cooldown, () => {
     enemy.play(Animation.Cooldown)
     const seconds = rand(1, 3)
-    wait(seconds, () => enemy.enterState(State.Move))
+    wait(seconds, () => {
+      enemy.enterState(State.Move)
+    })
   })
 
   enemy.onStateEnter(State.Stunned, () => {
     enemy.play(Animation.Stunned)
     const seconds = rand(0.3, 1) * gameState.player.bubble.stun
-    wait(seconds, () => enemy.enterState(State.Move))
+    wait(seconds, () => {
+      enemy.enterState(State.Move)
+    })
   })
 
   enemy.onStateUpdate(State.Move, () => {
@@ -59,7 +67,8 @@ export function addEnemyState(enemy: Enemy) {
       [Sprite.Bubbie, Sprite.Pokey].includes(enemy.sprite as Sprite) &&
       Number(rand()) < 0.005
     ) {
-      return enemy.enterState(State.Attack)
+      enemy.enterState(State.Attack)
+      return
     }
 
     const direction = player.pos.sub(enemy.pos).unit()

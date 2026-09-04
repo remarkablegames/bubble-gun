@@ -50,7 +50,7 @@ export function addReward() {
 
   tween(
     rewardMenu.pos,
-    game.paused ? center() : center().add(0, 700),
+    center(),
     1,
     (position) => (rewardMenu.pos = position),
     easings.easeOutElastic,
