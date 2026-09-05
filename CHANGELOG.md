@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/remarkablegames/bubble-gun/compare/v1.3.2...v1.3.3) (2026-09-05)
+
+
+### Continuous Integration
+
+* **github:** fix app-icon in workflow release-please.yml ([ca987fd](https://github.com/remarkablegames/bubble-gun/commit/ca987fd7f21adc04cbc071a14af8401e7a9862de))
+
 ## [1.3.2](https://github.com/remarkablegames/bubble-gun/compare/v1.3.1...v1.3.2) (2026-09-04)
 
 
